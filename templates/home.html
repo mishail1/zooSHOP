@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block title %}Главная страница{% endblock %}
+
+{% block main %}<section class="summer" id="spring">
+        <div class="right-1">
+             <div class="skidkaTEXT">
+                <h3 class="summer-skidka">Весенняя распродажа</h3>
+                <h1 class="NINEskidka"><b>СКИДКИ ДО 90%</b></h1>
+            </div>
+            <div class="coust">
+                <button class="look">СМОТРЕТЬ</button>
+               <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="shie">
+                <img src="{{ url_for('static', filename='img/slider.svg') }}" alt="" class="shie2">
+            </div>
+        </div>
+        <div class="left-1">
+            <img src="{{ url_for('static', filename='img/d6d66c81-5867-4a12-941a-a382bebcdff1.jpeg') }}" alt="" class="home">
+        </div>
+    </section>
+
+    <section class="dostavka">
+        <h1 class="TEXT46">БЕСПЛАТНАЯ ДОСТАВКА ОТ 3000Р</h1>
+        <h3 class="TEXT47">Сделайте заказ и получайте подарки!</h3>
+    </section>
+
+    <section class="skidka" id="tovars">
+        <div class="homes">
+            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
+            <h3 class="TEXT-HOMES">Домик</h3>
+            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
+
+        </div>
+        <div class="homes">
+            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
+            <h3 class="TEXT-HOMES">Домик</h3>
+            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
+        </div>
+        <div class="homes">
+            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
+            <h3 class="TEXT-HOMES">Домик</h3>
+            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
+        </div>
+        <div class="homes"><img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
+            <h3 class="TEXT-HOMES">Домик</h3>
+            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
+
+        </div>
+    </section>
+    <section class="foot">
+        <div class="left-foot">
+
+
+        </div>
+        <div class="right-foot">
+            <h5>Terms & Privacy</h5>
+            <h5>© 2021 Михаил Карпов </h5>
+        </div>
+    </section> {% endblock %}
+
+{% block downtext %}<div class="down-text">Онлайн зоомагазин ZOOPLANET предоставляет в ассортименте<br>
+            большой выбор товаров для ваших домашних животных</div>
+            <img src="img/cover_image_prices.jpg" class="phon" alt="">{% endblock %}

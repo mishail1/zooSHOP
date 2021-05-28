@@ -1,0 +1,209 @@
+
+@font-face{
+    font-family:"Revalia";
+    src: url("../fonts/Revalia.woff2") format("woff2");
+}
+
+@font-face{
+    font-family:"Roboto";
+    src: url("../fonts/Roboto.woff2") format("woff2");
+}
+@font-face{
+    font-family:"Roboto";
+    src: url("../fonts/Roboto2.woff2") format("woff2");
+}
+@font-face {
+    font-family: "PaytoneOne";
+    src: url("../fonts/PaytoneOne.woff2") format("woff2");
+}
+body{
+    font-family: "Roboto";
+    /* background: url("../img/1.jpg"), rgba(255, 0, 0, 0.6); */
+    background-repeat: no-repeat;
+    background-blend-mode: color-burn;
+    background-size: cover;
+    min-height: 50vh;
+}
+
+
+.phon{
+    width: 100%;
+}
+.logo>img{
+    width: 11vw;
+    height: 4vw;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    width: 90vw;
+}
+.menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 44vw;
+    padding: 0 calc(30% - 490px);
+    margin-left: 3vw;
+}
+.buttons{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 47vw;
+    font-size: 1.6vw;
+    font-family: "Roboto";
+    font-weight: 900;
+}
+.down-text{
+    margin-left: 4.7vw;
+    font-family: "Roboto";
+    font-size: 1.8vw;
+    font-weight: bold;
+    margin-top: 3vw;
+}
+
+/* -----------------------------------SECTION Весенняя распродажа------------------------------------------------------ */
+section.summer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vw;
+    margin-bottom: 6vw;
+}
+
+img.home{
+    width: 40vw;
+
+}
+.homes1{
+    width: 10vw;
+    height: 10vw;
+    /* width: 300px;
+    height: 300px; */
+}
+
+.summer-skidka{
+    /* padding-left: 5vw;
+    padding-bottom: 4vw; */
+    font-size: 4vw;
+    font-weight: bold;
+
+}
+.NINEskidka{
+        /* padding-left: 5vw; */
+        font-style: normal;
+        font-weight: bold;
+        font-size: 6vw;
+        letter-spacing: 0.04em;
+}
+.look{
+    width: 10vw;
+    height: 2vw;
+    background:greenyellow;
+    font-size: 1vw;
+    font-weight: bold;
+    border: 0;
+    
+
+}
+.dostavka{
+
+    background:black;
+    width: 99vw;
+    height: 10vw;
+}
+.TEXT46{
+
+
+    font-style: normal;
+    font-weight: bold;
+    font-size: 3vw;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+    padding-top: 3vw;
+    
+}
+.TEXT47{
+
+font-style: normal;
+font-weight: 300;
+font-size: 2vw;
+text-align: center;
+color: #FFFFFF;
+}
+.skidka{
+    padding-left: 4vw;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+}
+
+.TEXT-HOMES{
+    font-family: "Roboto";
+    font-size: 2vw;
+    font-weight: bold;
+}
+.COUNT-1{
+    font-family: "Roboto";
+    font-size: 25px;
+    font-weight: bold;
+}
+.podar{
+
+    background: black;
+}
+
+.foot{
+
+    background: black;
+    width: 99vw;
+    height: 10vw;
+}
+.svg1{
+   
+  
+}
+.right-foot{
+    padding-top: 3vw;
+    font-family: "Roboto";
+    font-size: 2vw;
+    color: white;
+  
+}
+.amount1{
+    width: 20vw;
+    height: 5vw;
+}
+.shie{
+    width: 60vw;
+    height: 6vw;
+}
+.shie2{
+    width: 20vw;
+    height: 6vw;
+    padding-left: 20vw;
+}
+.skidkaTEXT{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 10vw;
+    padding-left: 3vw;
+}
+.coust{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5vw;
+}
+.homes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.left-1>img{
+    width: 37vw;
+}
