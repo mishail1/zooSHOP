@@ -9,7 +9,7 @@
                 <h1 class="NINEskidka"><b>СКИДКИ ДО 90%</b></h1>
             </div>
             <div class="coust">
-                <button class="look">СМОТРЕТЬ</button>
+<!--                <button class="look">СМОТРЕТЬ</button>-->
                <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="shie">
                 <img src="{{ url_for('static', filename='img/slider.svg') }}" alt="" class="shie2">
             </div>
@@ -25,27 +25,58 @@
     </section>
 
     <section class="skidka" id="tovars">
-        <div class="homes">
-            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
-            <h3 class="TEXT-HOMES">Домик</h3>
-            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
+<!--        <div class="homes">-->
+<!--            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">-->
+<!--            <h3 class="TEXT-HOMES">Домик</h3>-->
+<!--            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">-->
+<!--            {% if current_user.is_authenticated %}-->
+<!--            <button class="look">КУПИТЬ</button>-->
+<!--            {% else %}-->
+<!--            <p>Зарегестрируйтесь в системе, чтобы купить</p>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+        {% for tovar in alltovars %}
+            <div class="homes">
+            <img src="{{tovar.link_img}}" alt="" class="homes1">
+            <h3 class="TEXT-HOMES">{{tovar.name_tovar}}</h3>
+            <h3 class="TEXT-HOMES">{{tovar.price}}</h3>
+            {% if current_user.is_authenticated %}
+            <button class="look">КУПИТЬ</button>
+            {% else %}
+            <p>Зарегестрируйтесь в системе, чтобы купить</p>
+            {% endif %}
+        </div>
+        {% endfor %}
+<!--        <div class="homes">-->
+<!--            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">-->
+<!--            <h3 class="TEXT-HOMES">Домик</h3>-->
+<!--            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">-->
+<!--            {% if current_user.is_authenticated %}-->
+<!--            <button class="look">КУПИТЬ</button>-->
+<!--            {% else %}-->
+<!--            <p>Зарегестрируйтесь в системе, чтобы купить</p>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--        <div class="homes">-->
+<!--            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">-->
+<!--            <h3 class="TEXT-HOMES">Домик</h3>-->
+<!--            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">-->
+<!--            {% if current_user.is_authenticated %}-->
+<!--            <button class="look">КУПИТЬ</button>-->
+<!--            {% else %}-->
+<!--            <p>Зарегестрируйтесь в системе, чтобы купить</p>-->
+<!--            {% endif %}-->
+<!--        </div>-->
+<!--        <div class="homes"><img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">-->
+<!--            <h3 class="TEXT-HOMES">Домик</h3>-->
+<!--            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">-->
+<!--            {% if current_user.is_authenticated %}-->
+<!--            <button class="look">КУПИТЬ</button>-->
+<!--            {% else %}-->
+<!--            <p>Зарегестрируйтесь в системе, чтобы купить</p>-->
+<!--            {% endif %}-->
 
-        </div>
-        <div class="homes">
-            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
-            <h3 class="TEXT-HOMES">Домик</h3>
-            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
-        </div>
-        <div class="homes">
-            <img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
-            <h3 class="TEXT-HOMES">Домик</h3>
-            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
-        </div>
-        <div class="homes"><img src="{{ url_for('static', filename='img/2553.970.jpg') }}" alt="" class="homes1">
-            <h3 class="TEXT-HOMES">Домик</h3>
-            <img src="{{ url_for('static', filename='img/цена.svg') }}" alt="" class="amount1">
-
-        </div>
+<!--        </div>-->
     </section>
     <section class="foot">
         <div class="left-foot">

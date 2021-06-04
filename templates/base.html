@@ -31,7 +31,14 @@
                 </div>
             </div>
             <div class="trash">
-                <a href="inner/buy.html"><img src="{{ url_for('static', filename='img/shopping-basket-button.svg') }}" alt=""></a>
+                {% if current_user.is_authenticated %}
+                {{current_user.email}}
+                <a href="/buy"><img src="{{ url_for('static', filename='img/shopping-basket-button.svg') }}" alt=""></a>
+                 <a href="/logout"><img src="{{ url_for('static', filename='img/exit.svg') }}" alt=""></a>
+                {% else %}
+                <a href="/signup"><p>Зарегестрироваться</p></a>
+                 <a href="/login"><p>Войти</p></a>
+                {% endif %}
             </div>
         </nav>
         {% block downtext %}{% endblock %}

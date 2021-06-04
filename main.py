@@ -1,4 +1,6 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
+
+from flask_login import LoginManager, login_required, login_user, logout_user
 
 import db.db_session
 
@@ -6,14 +8,21 @@ import models.form
 
 import db.users
 
+import db.ALLtovars
+
+import db.tovars
 my_first_app = Flask(__name__)
 my_first_app.config.from_object("config")
+
+login_manager = LoginManager()
+login_manager.init_app(my_first_app)
+login_manager.login_view = 'login'
 
 import db.db_session
 
 db.db_session.global_init("my_db.db")
 
-@my_first_app.route('/', methods=['GET', 'POST'])
+@my_first_app.route('/signup', methods=['GET', 'POST'])
 def sign_up():
     form = models.form.RegistrationForm()
     db_session = db.db_session.create_session()
@@ -26,15 +35,52 @@ def sign_up():
 
             db_session.add(user)
             db_session.commit()
-            return home()
+            return login()
         else:
             return render_template('auth.html', message="Пользователь с таким email уже существует", form=form)
     return render_template("auth.html", form=form)
 
-@my_first_app.route('/home')
+@my_first_app.route('/login', methods=['GET', 'POST'])
+def login():
+    form = models.form.LoginForm()
+    if form.validate_on_submit():
+        db_session = db.db_session.create_session()
+        user = db_session.query(db.users.User).filter(db.users.User.email == form.email.data).first()
+        if user and user.password == form.password.data:
+            login_user(user)
+            return home()
+        else:
+            return render_template('signin.html', message="Неправильный логин или пароль", form=form)
+    return render_template("signin.html", form=form)
+
+
+@login_manager.user_loader
+def load_user(user_id):
+    db_sess = db.db_session.create_session()
+    return db_sess.query(db.users.User).get(user_id)
+
+
+@my_first_app.route('/logout')
+@login_required
+def logout():
+    logout_user()
+    return redirect("/")
+
+
+@my_first_app.route('/')
 def home():
-    return render_template("home.html")
+    db_ses = db.db_session.create_session()
+    tovars = db_ses.query(db.ALLtovars.ALLtovars)
+
+    return render_template("home.html", alltovars=tovars)
+
+@my_first_app.route('/buy')
+def trash():
+    db_ses = db.db_session.create_session()
+    tovars = db_ses.query(db.tovars.Tovars)
+    return render_template("buy.html", tovars=tovars)
 
 
 if __name__ == "__main__":
     my_first_app.run(debug=True)
+

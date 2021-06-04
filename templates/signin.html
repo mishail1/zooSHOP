@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block title %}Регистрация{% endblock %}
+{% block title %}Вход{% endblock %}
 
 {% block main %}
       <form  method="POST">
@@ -20,13 +20,6 @@
                             </div>
                         {% endfor %}
 
-                        {{ form.password2(class="form-control", type="password", placeholder="Повторите пароль") }}
-                        {% for error in form.password2.errors %}
-                            <div class="alert alert-danger" role="alert">
-                                {{ error }}
-                            </div>
-                        {% endfor %}
-
                         {{ form.submit(type="submit", class="btn btn-primary") }}
 
                         {% if message %}
@@ -37,6 +30,6 @@
             </form>
 
         <div class="col-12">
-                 Если есть учетная запись, нужно <a class="link-primary" href="{{ url_for('login') }}">войти в систему</a>
+                 Если есть нет учетной записи, нужно <a class="link-primary" href="{{ url_for('sign_up') }}">создать учётную запись</a>
         </div>
 {% endblock %}
