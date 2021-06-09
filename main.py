@@ -12,6 +12,8 @@ import db.ALLtovars
 
 import db.tovars
 
+import os
+
 
 my_first_app = Flask(__name__)
 my_first_app.config.from_object("config")
@@ -101,7 +103,8 @@ def buy_tovar():
 
 
 if __name__ == "__main__":
-    my_first_app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))
+    my_first_app.run(debug=True, host='0.0.0.0', port=port)
 
 
 
