@@ -14,23 +14,24 @@
     <table class="table table-hover">
         <thead>
           <tr>
-            <th scope="col">#</th>
             <th scope="col">Название товара</th>
             <th scope="col">Цена</th>
-            <th scope="col">Кол-во</th>
           </tr>
         </thead>
         <tbody>
-         {% for tovar in tovars %}
-          {% if current_user.id == tovar.user_id %}
-            <tr>
-                <th scope="row">{{tovar.id}}</th>
-                <td>{{tovar.name_tovar}}</td>
-                <td>{{tovar.price}}</td>
-                <td>{{tovar.kol_vo}}</td>
-                <td><img src="{{ url_for('static', filename='icons/x-lg.svg') }}" alt=""></td>
-              </tr>
-          {% endif %}
+         {% for tovar_user in tovar_in_trash_user %}
+          {% if current_user.id == tovar_user.user_id %}
+             {% for tovar in aLLtovars %}
+                {% if tovar_user.tovar_id == tovar.id %}
+                    <tr>
+
+                        <td>{{tovar.name_tovar}}</td>
+                        <td>{{tovar.price}}</td>
+                        <td><img src="{{ url_for('static', filename='icons/x-lg.svg') }}" alt=""></td>
+                      </tr>
+                  {% endif %}
+             {% endfor %}
+         {% endif %}
         {% endfor %}
         </tbody>
       </table>

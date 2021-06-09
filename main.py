@@ -1,6 +1,6 @@
-from flask import Flask, render_template, redirect
+from flask import Flask, render_template, redirect, request
 
-from flask_login import LoginManager, login_required, login_user, logout_user
+from flask_login import LoginManager, login_required, login_user, logout_user, current_user
 
 import db.db_session
 
@@ -11,6 +11,8 @@ import db.users
 import db.ALLtovars
 
 import db.tovars
+
+
 my_first_app = Flask(__name__)
 my_first_app.config.from_object("config")
 
@@ -77,10 +79,30 @@ def home():
 @my_first_app.route('/buy')
 def trash():
     db_ses = db.db_session.create_session()
-    tovars = db_ses.query(db.tovars.Tovars)
-    return render_template("buy.html", tovars=tovars)
+    tovar_in_trash_user = db_ses.query(db.tovars.Tovars)
+    aLLtovars = db_ses.query(db.ALLtovars.ALLtovars)
+    return render_template("buy.html", tovar_in_trash_user=tovar_in_trash_user, aLLtovars=aLLtovars)
+
+
+@my_first_app.route("/buy-tovar", methods=['GET', 'POST'])
+def buy_tovar():
+    tovar_id = request.args.get('values')
+    print(tovar_id)
+    db_ses = db.db_session.create_session()
+    tovars = db.tovars.Tovars(
+        user_id=current_user.id,
+        tovar_id=tovar_id
+    )
+
+    db_ses.add(tovars)
+    db_ses.commit()
+
+    return redirect("/")
 
 
 if __name__ == "__main__":
     my_first_app.run(debug=True)
+
+
+
 

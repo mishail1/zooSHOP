@@ -41,7 +41,7 @@
             <h3 class="TEXT-HOMES">{{tovar.name_tovar}}</h3>
             <h3 class="TEXT-HOMES">{{tovar.price}}</h3>
             {% if current_user.is_authenticated %}
-            <button class="look">КУПИТЬ</button>
+            <a href="{{ url_for('buy_tovar', values=tovar.id) }}"><button class="look">КУПИТЬ</button></a>
             {% else %}
             <p>Зарегестрируйтесь в системе, чтобы купить</p>
             {% endif %}

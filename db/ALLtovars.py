@@ -8,7 +8,7 @@ class ALLtovars(SqlAlchemyBase):
     id = sqlalchemy.Column(sqlalchemy.Integer,
                            primary_key=True, autoincrement=True)
     name_tovar = sqlalchemy.Column(sqlalchemy.String(120), index=True, unique=True)
-    price = sqlalchemy.Column(sqlalchemy.Float, nullable=True)
+    price = sqlalchemy.Column(sqlalchemy.String, nullable=True)
 
     link_img = sqlalchemy.Column(sqlalchemy.String)
 
