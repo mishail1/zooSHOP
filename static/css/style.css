@@ -22,7 +22,7 @@ body{
     background-repeat: no-repeat;
     background-blend-mode: color-burn;
     background-size: cover;
-    min-height: 50vh;
+    height: 100%;
 }
 
 
@@ -112,7 +112,7 @@ img.home{
 .dostavka{
 
     background:black;
-    width: 99vw;
+    /* width: 99vw; */
     height: 10vw;
 }
 .TEXT46{
@@ -159,8 +159,8 @@ color: #FFFFFF;
 .foot{
 
     background: black;
-    width: 99vw;
     height: 10vw;
+	margin-top:1vw;
 }
 .svg1{
    
@@ -207,3 +207,24 @@ color: #FFFFFF;
 .left-1>img{
     width: 37vw;
 }
+
+button {
+    color: #fff;
+    background: #000;
+    padding: 1.2rem2rem;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    outline: none;
+    transition: background 2s;
+  }
+  button:active {
+    background: red;
+    transition: background 0s;
+  }
+  
+  .main{
+    min-height: calc(98vh - 76px);
+  }
+ 
+  

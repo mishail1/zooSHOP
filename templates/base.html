@@ -10,6 +10,7 @@
 
 </head>
 <body>
+    <div class="main">
   <header>
         <nav>
             <div class="menu">
@@ -47,6 +48,17 @@
 
 
     {% block main %}{% endblock %}
+    </div>
+    <section class="foot">
+        <div class="left-foot">
+
+
+        </div>
+        <div class="right-foot">
+            <h5>Terms & Privacy</h5>
+            <h5>© 2021 Михаил Карпов </h5>
+        </div>
+    </section>
     <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
 </body>
 </html>
